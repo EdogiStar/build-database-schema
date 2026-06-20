@@ -3,9 +3,20 @@ const Joi = require('joi');
 
 const getProducts = async (req, res) => {
     try {
-        const products = await Product.find({});
+
+        const limit = Number(req.query.limit);
+
+        let query = Product.find({});
+
+        if (limit) {
+            query = query.limit(limit);
+        }
+
+        const products = await query;
+
         res.status(200).send(products);
-    }catch(error){
+
+    } catch (error) {
         res.status(500).send('Server error');
     }
 };
