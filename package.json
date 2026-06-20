@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "name": "build-database-schema",
+  "name": "mini-store-backend",
   "description": "",
   "main": "index.js",
   "keywords": [],
